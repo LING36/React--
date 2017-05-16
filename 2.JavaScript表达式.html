@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>表达式</title>
+		<script src="https://cdn.bootcss.com/react/15.4.2/react.min.js"></script>
+		<script src="https://cdn.bootcss.com/react/15.4.2/react-dom.min.js"></script>
+		<script src="https://cdn.bootcss.com/babel-standalone/6.22.1/babel.min.js"></script>
+	</head>
+
+	<body>
+		<div id="example"></div>
+	</body>
+	<!--注释...:React 推荐使用内联样式。我们可以使用 camelCase 语法来设置内联样式. React 会在指定元素数字后自动添加 px 。以下实例演示了为 h13元素添加 myStyle 内联样式：-->
+	<script type="text/babel">
+		var i = 1 ; 
+		var myStyle = { fontSize:100, color:'#FF0000'}; 
+		var arr = [
+			<p>数组111</p>,
+			<p>数组222</p>,
+		]; 
+		ReactDOM.render(
+		<div>
+			{/*表达式------我们可以在 JSX 中使用 JavaScript 表达式。表达式写在花括号 {} 中*/}
+			<h1>{1+1}</h1> {/*在 JSX 中不能使用 if else 语句，但可以使用 conditional (三元运算) 表达式来替代。以下实例中如果变量 i 等于 1 浏览器将输出 true, 如果修改 i 的值，则会输出 false*/}
+			<h2>{i == 1 ? 'true' : 'false'}</h2> {/*React 推荐使用内联样式。我们可以使用 camelCase 语法来设置内联样式. React 会在指定元素数字后自动添加 px 。以下实例演示了为 h13元素添加 myStyle 内联样式：*/}
+			<h3 style={myStyle}>React</h3>
+			<div>{arr}</div>
+			
+		</div>, document.getElementById('example') );
+	</script>
+
+</html>
